@@ -1,23 +1,29 @@
 import streamlit as st
 import pandas as pd
-import plotly.graph_objects as go
 import os
 
-# Verificar si el archivo existe
-st.write("Buscando archivo de datos...")
-if os.path.exists('vehicles_us.csv'):
-    st.success("Archivo vehicles_us.csv encontrado")
-    car_data = pd.read_csv('vehicles_us.csv')
+st.title("Verificación de archivos")
+
+# Listar todos los archivos en el directorio actual
+st.write("### Archivos en el directorio actual:")
+current_dir = os.listdir('.')
+for file in current_dir:
+    st.write(f"- {file}")
+
+# Verificar si el CSV existe
+csv_path = 'vehicles_us.csv'
+if os.path.exists(csv_path):
+    st.success(f"Archivo '{csv_path}' encontrado")
+    
+    # Intentar cargar
+    try:
+        car_data = pd.read_csv(csv_path)
+        st.write(f"Datos cargados: {len(car_data)} filas")
+        st.dataframe(car_data.head())
+    except Exception as e:
+        st.error(f"Error al cargar: {e}")
 else:
-    # Listar archivos disponibles para debug
-    st.error("Archivo vehicles_us.csv NO encontrado")
-    st.write("Archivos en el directorio:")
-    for file in os.listdir('.'):
-        st.write(f"- {file}")
-    # Crear datos de ejemplo como fallback
-    import numpy as np
-    st.warning("Usando datos de ejemplo")
-    car_data = pd.DataFrame({
-        'odometer': np.random.randint(0, 200000, 1000),
-        'price': np.random.randint(1000, 50000, 1000)
-    })
+    st.error(f"Archivo '{csv_path}' NO encontrado")
+    
+    # Mostrar ruta absoluta para debug
+    st.write(f"Directorio actual: {os.path.abspath('.')}")
