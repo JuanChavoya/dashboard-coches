@@ -2,24 +2,34 @@
 
 Aplicación web desarrollada con Streamlit para análisis exploratorio de datos de anuncios de vehículos.
 
-## Características
+## **Enlace a la aplicación desplegada**
 
-- Visualización interactiva de datos
-- Histograma de distribución del odómetro
-- Gráfico de dispersión Odómetro vs Precio
-- Interfaz intuitiva con botones y casillas
-- Desplegado en Render para acceso online
+**URL de la aplicación en Render:**  
+ [https://TU-APP.onrender.com](https://TU-APP.onrender.com)
 
-## Dataset
-
-El proyecto utiliza el dataset `vehicles_us.csv` que contiene información de anuncios de venta de coches.
+*(Reemplaza TU-APP con el nombre real de tu app en Render)*
 
 ## Cómo usar
 
 ### Versión online
-La aplicación está disponible en: [https://dashboard-coches.onrender.com](https://dashboard-coches.onrender.com)
+La aplicación está disponible en: **[https://TU-APP.onrender.com](https://TU-APP.onrender.com)**
 
 ### Ejecutar localmente
 ```bash
+git clone https://github.com/TU-USUARIO/TU-REPOSITORIO.git
+cd TU-REPOSITORIO
 pip install -r requirements.txt
 streamlit run app.py
+
+
+**Donde:**
+- `TU-APP` = nombre que le diste en Render (ej: `dashboard-coches-123`)
+- `TU-USUARIO` = tu nombre de usuario en GitHub
+- `TU-REPOSITORIO` = nombre de tu repositorio
+
+---
+
+## **PASO 3: Verificar estructura del repositorio**
+
+Asegúrate de que tu repositorio tenga **EXACTAMENTE** esta estructura:
+
